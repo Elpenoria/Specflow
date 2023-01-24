@@ -69,7 +69,6 @@ namespace TestProject.StepDefinitions
 
 
 		public IList<IWebElement> h1 = new List<IWebElement>();
-		// IList<IWebElement> title = new List<IWebElement>();
 		public IList<IWebElement> meta = new List<IWebElement>();
 		public IList<IWebElement> h2 = new List<IWebElement>();
 		public IList<IWebElement> p = new List<IWebElement>();
@@ -77,20 +76,13 @@ namespace TestProject.StepDefinitions
 		[Then(@"I can extract the following fields from the blog page\. \(H(.*), Meta title, Meta description, H(.*) elements, Paragraph elements\)")]
 		public void ThenICanExtractTheFollowingFieldsFromTheBlogPage_HMetaTitleMetaDescriptionHElementsParagraphElements(int p0, int p1)
 		{
-			String tag1 = "h1";
+			
 			h1 = driver.FindElements(By.TagName("h1"));
 
-
-			String tag2 = "meta";
 			meta = driver.FindElements(By.TagName("meta"));
 
-
-
-			String tag3 = "h2";
 			h2 = driver.FindElements(By.TagName("h2"));
 
-
-			String tag4 = "p";
 			p = driver.FindElements(By.TagName("p"));
 
 
@@ -195,105 +187,7 @@ namespace TestProject.StepDefinitions
 
 			driver.Quit();
 
-			//json1.put("h1", map);
-
-			/*Gson gson = new GsonBuilder().setPrettyPrinting().create();
-			String ugly = json1.toJSONString();
-			JsonElement je = JSONParser.parseString(ugly);
-			String prettyJsonString = gson.toJson(je);
-
-			file.write(prettyJsonString);
-
-
-			///////////////////////////////////////////////////////////////////////////////////////////////////
-
-			JSONObject json2 = new JSONObject();
-			Map map1 = new LinkedHashMap(myTags1.size());
-			int j = 1;
-			for (WebElement el : myTags1)
-			{
-
-				map1.put(j, driver.getTitle());
-				j++;
-
-			}
-			json2.put("title", map1);
-
-			Gson gson1 = new GsonBuilder().setPrettyPrinting().create();
-			String ugly1 = json2.toJSONString();
-			JsonElement je1 = JsonParser.parseString(ugly1);
-			String prettyJsonString1 = gson.toJson(je1);
-
-			file.write(prettyJsonString1);
-
-
-			////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-			JSONObject json3 = new JSONObject();
-			Map map2 = new LinkedHashMap(myTags2.size());
-			int k = 1;
-			for (WebElement el : myTags2)
-			{
-
-				map2.put(k, el.getAttribute("content"));
-				k++;
-
-			}
-			json3.put("meta", map2);
-
-			Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
-			String ugly2 = json3.toJSONString();
-			JsonElement je2 = JsonParser.parseString(ugly2);
-			String prettyJsonString2 = gson.toJson(je2);
-
-			file.write(prettyJsonString2);
-
-
-			////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-			JSONObject json4 = new JSONObject();
-			Map map3 = new LinkedHashMap(myTags3.size());
-			int l = 1;
-			for (WebElement el : myTags3)
-			{
-
-				map3.put(l, el.getText());
-				l++;
-
-			}
-			json4.put("h2", map3);
-
-			Gson gson3 = new GsonBuilder().setPrettyPrinting().create();
-			String ugly3 = json4.toJSONString();
-			JsonElement je3 = JsonParser.parseString(ugly3);
-			String prettyJsonString3 = gson.toJson(je3);
-
-			file.write(prettyJsonString3);
-
-
-			//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-			JSONObject json5 = new JSONObject();
-			Map map4 = new LinkedHashMap(myTags4.size());
-			int m = 1;
-			for (WebElement el : myTags4)
-			{
-
-				map4.put(m, el.getText());
-				m++;
-
-			}
-			json5.put("p", map4);
-
-			Gson gson4 = new GsonBuilder().setPrettyPrinting().create();
-			String ugly4 = json5.toJSONString();
-			JsonElement je4 = JsonParser.parseString(ugly4);
-			String prettyJsonString4 = gson.toJson(je4);
-
-			file.write(prettyJsonString4);
-
-			file.close();
-		}*/
+			
 
 		}
 	}
